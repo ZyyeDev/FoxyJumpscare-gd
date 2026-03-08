@@ -26,6 +26,7 @@
         "probability": {
             "name": "Jumpscare Probability",
             "type": "int",
+			"min": 2,
             "default": 10000
         },
 		"practice_enabled": {
