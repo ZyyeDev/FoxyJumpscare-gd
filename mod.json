@@ -1,0 +1,38 @@
+{
+	"geode": "5.3.0",
+	"gd": {
+		"win": "2.2081"
+	},
+	"resources": {	
+        "sprites": [
+            "resources/*.png"
+        ],
+		"files": [
+			"resources/jumpscare.mp3"
+		]
+    },
+	"id": "zyyedev.foxy-jumpscare",
+	"name": "Foxy Jumpscare",
+	"version": "v0.0.1",
+	"description": "",
+	"developer": "ZyyeDev",
+	"tags": ["joke"],
+
+	"links": {
+		"source": "https://github.com/ZyyeDev/FoxyJumpscare-gd"
+	},
+
+    "settings": {
+        "probability": {
+            "name": "Jumpscare Probability",
+            "type": "int",
+            "default": 10000
+        },
+		"practice_enabled": {
+			"name": "Enabled On Practice",
+			"description": "If Enabled, Jumpscare will play on practice and TestMode",
+			"type": "bool",
+			"default": false
+		}
+	}
+}
