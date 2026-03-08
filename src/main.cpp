@@ -80,9 +80,9 @@ class $modify(AltPlayerObject, PlayerObject){
 		system->createSound(geode::utils::string::pathToString(Mod::get()->getResourcesDir() / "jumpscare.mp3").c_str(), FMOD_DEFAULT, nullptr, &sound);
 		system->playSound(sound, nullptr, false, &channel);
 
-		if (!Mod::get()->getSettingValue<bool>("full_volume"))
+		if (!Mod::get()->getSettingValue<bool>("full_volume")){
 			channel->setVolume(fmodAE->getEffectsVolume());
-		
+		}
 		//
 
 		sprite->runAction(CCSequence::create(animate, remove, nullptr));

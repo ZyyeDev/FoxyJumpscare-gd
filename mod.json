@@ -33,6 +33,12 @@
 			"description": "If Enabled, Jumpscare will play on practice and TestMode",
 			"type": "bool",
 			"default": false
+		},
+		"full_volume": {
+			"name": "Full Sound Volume",
+			"description": "If Enabled, Jumpscare sound will play at full volume",
+			"type": "bool",
+			"default": false
 		}
 	}
 }
