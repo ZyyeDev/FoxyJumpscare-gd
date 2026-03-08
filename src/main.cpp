@@ -36,6 +36,22 @@ class $modify(AltPlayerObject, PlayerObject){
 		auto anim = CCAnimation::create();
 		anim->setDelayPerUnit(0.05);
 
+		auto winSize = CCDirector::get()->getWinSize();
+
+		auto firstTex = CCTextureCache::sharedTextureCache()->addImage(
+			geode::utils::string::pathToString(Mod::get()->getResourcesDir() / "001.png").c_str(),
+			false
+		);
+
+		float scale = 1.0f;
+		if (firstTex) {
+			auto texSize = firstTex->getContentSize();
+			float scaleX = winSize.width / texSize.width;
+			float scaleY = winSize.height / texSize.height;
+			
+			scale = std::max(scaleX, scaleY);
+		}
+
 		for (int i = 1; i <= 24; i++){
 			std::string frameNum = "";
 			if (i <= 9){
@@ -62,8 +78,8 @@ class $modify(AltPlayerObject, PlayerObject){
 
 		auto sprite = CCSprite::create();
 		sprite->setTextureRect({ {0,0}, {0,0} });
-		sprite->setPosition({ center.width, center.height - 10 });
-		sprite->setScale(4.0f);
+		sprite->setPosition(winSize/2);
+		sprite->setScale(scale);
 
 		CCDirector::get()->getRunningScene()->addChild(sprite, 999);
 
